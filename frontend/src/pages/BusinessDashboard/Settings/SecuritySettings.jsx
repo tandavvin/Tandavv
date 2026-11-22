@@ -1,0 +1,3 @@
+import FormPage from "../../../components/BusinessDashboard/FormPage";
+const fields=[{name:"currentPassword",label:"Current password",type:"password",required:true},{name:"newPassword",label:"New password",type:"password",required:true},{name:"confirmPassword",label:"Confirm new password",type:"password",required:true}];
+export default function SecuritySettings(){return <FormPage title="Security Settings" description="Change your password. Connect this form to your authenticated password-update API before production." fields={fields} submitLabel="Update password" onSubmit={v=>console.log("Security demo:",v)}/>;}

@@ -1,0 +1,3 @@
+import FormPage from "../../../components/BusinessDashboard/FormPage";
+const fields=[{name:"storeName",label:"Store name",required:true,placeholder:"My Business"},{name:"storeEmail",label:"Business email",type:"email",required:true,placeholder:"hello@example.com"},{name:"phone",label:"Phone number",type:"tel",placeholder:"+91..."},{name:"address",label:"Business address",type:"textarea",placeholder:"Enter your business address"}];
+export default function GeneralSettings(){return <FormPage title="General Settings" description="Manage your business profile and store information." fields={fields} submitLabel="Save settings" onSubmit={v=>console.log("General settings demo:",v)}/>;}
