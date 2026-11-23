@@ -151,10 +151,10 @@ function ForgotPassword() {
           <Link to="/landing" className="flex items-center gap-2.5 group">
             <img
               src="/logo.png"
-              alt="Tandav Logo"
+              alt="tandavv Logo"
               className="h-8 w-auto transition-transform duration-200 group-hover:scale-105"
             />
-            <span className="text-lg font-extrabold tracking-tight text-[#0f172a]">Tandav</span>
+            <span className="text-lg font-extrabold tracking-tight text-[#0f172a]">tandavv</span>
           </Link>
 
           <Link
@@ -444,7 +444,7 @@ function ForgotPassword() {
 
       <footer className="w-full border-t border-slate-200/50 bg-white/40 py-5 px-6 sm:px-8 text-center text-xs text-slate-400">
         <div className="max-w-7xl mx-auto">
-          &copy; {new Date().getFullYear()} Tandav Inc. All rights reserved.
+          &copy; {new Date().getFullYear()} tandavv Inc. All rights reserved.
         </div>
       </footer>
     </main>

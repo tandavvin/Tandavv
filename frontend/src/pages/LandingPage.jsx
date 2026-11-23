@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import SEO from "../components/SEO";
 
 const features = [
   {
@@ -111,131 +112,239 @@ const faqs = [
 ];
 
 function EditorPreview() {
+  const [selectedSection, setSelectedSection] = useState("Hero");
+  const [activeTab, setActiveTab] = useState("Content");
+
+  const sections = [
+    { name: "Navbar", sub: "Section 1" },
+    { name: "Hero", sub: "Section 2" },
+    { name: "Products", sub: "Section 3" },
+    { name: "About", sub: "Section 4" },
+    { name: "Reviews", sub: "Section 5" },
+  ];
+
   return (
-    <div className="w-full max-w-3xl bg-white rounded-2xl border border-slate-200 shadow-2xl overflow-hidden flex flex-col text-left">
-      <div className="bg-slate-50 border-b border-slate-200 px-4 py-2.5 flex items-center justify-between text-xs">
-        <div className="flex items-center gap-3">
-          <button className="bg-white border border-slate-200 text-slate-600 px-2 py-1 rounded font-medium shadow-2xs hover:bg-slate-100">← Back</button>
-          <div className="flex items-center gap-1.5 font-medium text-slate-700">
-            <span className="text-slate-400">Tandav Builder</span>
-            <span className="text-slate-300">/</span>
-            <span className="bg-orange-50 text-orange-700 px-2 py-0.5 rounded border border-orange-100 font-semibold">Acme Boutique</span>
+    <div className="w-full max-w-3xl rounded-2xl bg-white border border-slate-200/90 shadow-2xl overflow-hidden text-left select-none">
+      {/* Top Studio Header */}
+      <div className="flex items-center justify-between gap-2 border-b border-slate-200/80 bg-white px-3.5 py-2">
+        <div className="flex items-center gap-2 min-w-0">
+          <span className="flex h-6 w-6 items-center justify-center rounded-lg border border-slate-200 text-xs text-slate-500 shrink-0">
+            ←
+          </span>
+          <div className="flex items-center gap-1.5 shrink-0">
+            <img src="/favicon-16x16.png" alt="Tandav" className="h-4 w-4 object-contain" />
+            <div className="leading-none">
+              <div className="text-[11px] font-bold text-slate-900">Tandav</div>
+              <div className="text-[8px] font-semibold tracking-widest text-slate-400 uppercase">
+                Studio
+              </div>
+            </div>
+          </div>
+          <div className="hidden md:flex items-center gap-1.5 pl-2 border-l border-slate-200 truncate">
+            <span className="text-[10px] text-slate-400">Editing</span>
+            <span className="truncate rounded-md bg-orange-50 border border-orange-200/70 px-2 py-0.5 text-[10px] font-semibold text-orange-700">
+              Tandavv&apos;s Store
+            </span>
           </div>
         </div>
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1.5 text-emerald-600 font-medium bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100 text-[11px]">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Saved
-          </div>
-          <button className="bg-orange-600 text-white font-medium px-3 py-1.5 rounded-lg shadow-sm hover:bg-orange-700 transition">
-            Preview Website
-          </button>
+
+        <div className="hidden lg:flex items-center rounded-lg bg-slate-100 p-0.5 text-[10px] font-medium text-slate-500">
+          <span className="inline-flex items-center gap-1 rounded-md bg-white px-2 py-0.5 font-semibold text-orange-600 shadow-2xs">
+            <svg className="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+            </svg>
+          </span>
+          <span className="inline-flex items-center gap-1 px-2 py-0.5">
+            <svg className="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <rect x="4" y="4" width="16" height="12" rx="1.5" />
+              <path d="M2 18h20" />
+            </svg>
+          </span>
+          <span className="inline-flex items-center gap-1 px-2 py-0.5">
+            <svg className="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <rect x="5" y="2" width="14" height="20" rx="2" />
+              <path d="M12 18h.01" />
+            </svg>
+          </span>
+          <span className="inline-flex items-center gap-1 px-2 py-0.5">
+            <svg className="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <rect x="7" y="2" width="10" height="20" rx="2" />
+              <path d="M12 18h.01" />
+            </svg>
+          </span>
+        </div>
+
+        <div className="flex items-center gap-2 shrink-0">
+          <span className="hidden sm:inline rounded-lg border border-slate-200 bg-white px-2.5 py-1 text-[10px] font-semibold text-slate-700">
+            + New Store
+          </span>
+          <span className="inline-flex items-center gap-1 rounded-lg bg-emerald-600 px-3 py-1 text-[10px] font-semibold text-white shadow-2xs">
+            🌐 Live Site
+          </span>
         </div>
       </div>
 
-      <div className="bg-white border-b border-slate-100 px-4 py-2 flex items-center justify-between text-xs">
-        <div className="flex items-center gap-2">
-          <div className="flex bg-slate-100 p-0.5 rounded-lg font-medium text-slate-600">
-            <button className="bg-white text-slate-900 px-3 py-1 rounded-md shadow-2xs">Sections</button>
-            <button className="px-3 py-1 text-slate-500 hover:text-slate-800">Pages 3</button>
-          </div>
-        </div>
-        <div className="flex items-center gap-2 text-slate-500 text-[11px]">
-          <span className="font-medium text-slate-700">ACTIVE PAGE:</span>
-          <span className="bg-orange-50 text-orange-600 px-2 py-0.5 rounded font-mono font-semibold border border-orange-100">/home</span>
-        </div>
-        <div className="hidden sm:flex items-center gap-2 text-slate-500 text-[11px]">
-          <span className="text-slate-400 font-medium">Responsive</span>
-          <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-700 font-medium">Laptop (1024px)</span>
-        </div>
-      </div>
-
-      <div className="grid min-h-[320px] grid-cols-1 bg-slate-50/50 sm:grid-cols-12">
-        <div className="hidden max-h-[380px] space-y-2 overflow-y-auto border-b border-slate-200 bg-white p-3 sm:col-span-4 sm:block sm:border-b-0 sm:border-r">
-          <div className="text-[10px] uppercase tracking-wider font-bold text-slate-400 px-1 mb-1">Sections for: /home</div>
-          {[
-            { name: "Navbar", active: false },
-            { name: "Hero", active: false },
-            { name: "Products", active: true },
-            { name: "About", active: false },
-            { name: "Reviews", active: false },
-            { name: "Footer", active: false },
-          ].map((sec, idx) => (
-            <div
-              key={idx}
-              className={`flex items-center justify-between p-2 rounded-xl border text-xs font-medium transition ${
-                sec.active 
-                  ? "bg-orange-50/60 border-orange-200 text-orange-900 shadow-2xs" 
-                  : "bg-white border-slate-200 text-slate-700 hover:bg-slate-50"
-              }`}
-            >
-              <div className="flex items-center gap-2">
-                <span className="text-slate-300 cursor-grab">⋮⋮</span>
-                <span>📂 {sec.name}</span>
-              </div>
-              <span className="text-slate-400 text-[10px]">⌄</span>
-            </div>
-          ))}
-          <div className="pt-2">
-            <button className="w-full py-1.5 border border-dashed border-slate-300 rounded-lg text-slate-500 text-xs font-medium hover:border-orange-500 hover:text-orange-600 transition">
-              + Add New Section
-            </button>
-          </div>
-        </div>
-
-        <div className="min-w-0 overflow-hidden bg-slate-100/70 p-3 sm:col-span-8 sm:p-6 flex flex-col justify-start">
-          <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4 space-y-3 w-full">
-            <div className="flex justify-between items-center pb-2 border-b border-slate-100">
-              <div className="flex items-center gap-1.5 font-bold text-slate-900 text-xs">
-                <span className="text-orange-600"><img src="/favicon-16x16.png" alt="logo" /></span> Tandav
-              </div>
-              <div className="flex gap-3 text-[10px] text-slate-600 font-medium">
-                <span className="text-orange-600 font-bold">Home</span>
-                <span>Products</span>
-                <span>About</span>
-              </div>
-              <div className="flex gap-1.5">
-                <span className="bg-slate-100 text-slate-800 text-[9px] px-2 py-0.5 rounded font-medium">Login</span>
-                <span className="bg-orange-600 text-white text-[9px] px-2 py-0.5 rounded font-medium">Sign Up</span>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-orange-50 to-amber-50/30 p-4 rounded-xl border border-orange-100 space-y-2">
-              <span className="inline-block bg-orange-100 text-orange-700 text-[9px] font-semibold px-2 py-0.5 rounded-full">
-                ⚡ New Storefront
+      {/* Main 3-Column Studio */}
+      <div className="grid grid-cols-12 bg-slate-100/75">
+        {/* Left Rail + Sections Drawer */}
+        <div className="hidden sm:flex sm:col-span-4 border-r border-slate-200/80 bg-white">
+          <div className="w-8 border-r border-slate-100 bg-slate-50/60 py-2.5 flex flex-col items-center justify-between shrink-0 text-[11px] text-slate-400">
+            <div className="flex flex-col items-center gap-2">
+              <span>+</span>
+              <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-orange-600 text-[10px] text-white shadow-2xs">
+                ⊞
               </span>
-              <h4 className="text-xs font-extrabold text-slate-900 leading-tight">
+              <span>📄</span>
+              <span>⧉</span>
+            </div>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-orange-100 text-[9px] font-bold text-orange-700">
+              T
+            </span>
+          </div>
+
+          <div className="flex-1 p-2.5 min-w-0">
+            <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+              <div>
+                <div className="text-[11px] font-bold text-slate-800 leading-tight">Sections &amp; Theme</div>
+                <div className="text-[9px] text-slate-400">Website Editor</div>
+              </div>
+              <span className="text-[10px] text-slate-400">✕</span>
+            </div>
+
+            <div className="flex items-center justify-between gap-1.5 mb-2">
+              <div className="min-w-0">
+                <div className="text-[10.5px] font-bold text-slate-800 truncate">
+                  Page Sections <span className="text-slate-400 font-normal">6</span>
+                </div>
+              </div>
+              <span className="rounded-md bg-orange-600 px-2 py-1 text-[9.5px] font-semibold text-white shrink-0">
+                + Add Section
+              </span>
+            </div>
+
+            <div className="space-y-1.5">
+              {sections.map((sec) => {
+                const active = selectedSection === sec.name;
+                return (
+                  <button
+                    key={sec.name}
+                    type="button"
+                    onClick={() => setSelectedSection(sec.name)}
+                    className={`w-full flex items-center justify-between rounded-lg border px-2 py-1.5 text-left transition cursor-pointer ${
+                      active
+                        ? "border-orange-300 bg-orange-50/70 text-orange-950"
+                        : "border-slate-100 bg-white text-slate-700 hover:bg-slate-50"
+                    }`}
+                  >
+                    <div className="flex items-center gap-1.5 min-w-0">
+                      <span className="text-[10px] text-slate-300">⋮⋮</span>
+                      <div className="truncate leading-tight">
+                        <div className="text-[10.5px] font-semibold truncate">{sec.name}</div>
+                        <div className="text-[8.5px] text-slate-400">{sec.sub}</div>
+                      </div>
+                    </div>
+                    <span className="text-xs text-slate-300">›</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* Center Storefront Canvas */}
+        <div className="col-span-12 sm:col-span-5 p-3 sm:p-4 flex items-center">
+          <div className="w-full rounded-xl border border-slate-200/90 bg-white shadow-sm overflow-hidden">
+            <div className="flex items-center justify-between border-b border-slate-100 px-3.5 py-2.5">
+              <div className="flex items-center gap-1.5">
+                <img src="/favicon-16x16.png" alt="Tandavv" className="h-4 w-4 object-contain" />
+                <span className="text-xs font-extrabold text-amber-600">Tandavv</span>
+              </div>
+              <span className="text-xs font-bold text-slate-700">☰</span>
+            </div>
+
+            <div className="bg-gradient-to-br from-orange-50/80 via-amber-50/85 to-orange-100/70 p-4 space-y-2.5">
+              <span className="inline-block rounded-full bg-white/90 border border-orange-200/80 px-2.5 py-0.5 text-[9.5px] font-semibold text-orange-700">
+                ✨ New · Multi-tenant storefronts
+              </span>
+
+              <h4 className="text-sm font-extrabold leading-snug text-slate-900">
                 Empowering Small Businesses with Custom Digital Storefronts
               </h4>
-              <p className="text-[10px] text-slate-500 leading-relaxed">
-                Build, customize, and launch your storefront in minutes.
+
+              <p className="text-[10.5px] leading-relaxed text-slate-600">
+                Build, customize, and launch your multi-tenant storefront in minutes with automated inventory and secure payments.
               </p>
-              <div className="flex gap-2 pt-1">
-                <span className="bg-orange-600 text-white text-[9px] font-medium px-2.5 py-1 rounded shadow-2xs">Get Started Free →</span>
+
+              <div className="flex flex-wrap items-center gap-2 pt-1">
+                <span className="rounded-full bg-orange-600 px-3 py-1.5 text-[10px] font-semibold text-white shadow-2xs">
+                  Get Started Free →
+                </span>
+                <span className="rounded-full bg-white border border-slate-200 px-3 py-1.5 text-[10px] font-semibold text-slate-700">
+                  Learn more
+                </span>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Properties Inspector */}
+        <div className="hidden sm:flex sm:col-span-3 flex-col justify-between border-l border-slate-200/80 bg-white p-2.5">
+          <div className="space-y-2.5">
+            <div className="flex items-center justify-between pb-1.5 border-b border-slate-100">
+              <div>
+                <div className="text-[11px] font-bold text-slate-800 leading-tight">Properties</div>
+                <div className="text-[8.5px] text-slate-400">Editing {selectedSection.toLowerCase()}</div>
+              </div>
+              <span className="text-[10px] text-slate-400">✕</span>
             </div>
 
-            <div className="space-y-1.5 pt-1">
-              <div className="flex items-center justify-between text-[10px] font-bold text-slate-800 px-0.5">
-                <span>Featured Products</span>
-                <span className="text-orange-600 font-medium text-[9px]">View All →</span>
+            <div className="flex items-center justify-between rounded-lg bg-slate-50 border border-slate-100 px-2 py-1.5">
+              <div className="flex items-center gap-1.5 min-w-0">
+                <span className="flex h-5 w-5 items-center justify-center rounded bg-white border border-slate-200 font-serif text-[10px] font-bold text-slate-600 shrink-0">
+                  T
+                </span>
+                <div className="truncate leading-tight">
+                  <div className="text-[10px] font-bold text-slate-800 truncate">section</div>
+                  <div className="text-[8px] text-slate-400">section</div>
+                </div>
               </div>
-              <div className="grid grid-cols-4 gap-2">
-                {[
-                  { img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=150&q=80", name: "Classic Jacket", price: "$49.00" },
-                  { img: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=150&q=80", name: "Summer Dress", price: "$35.00" },
-                  { img: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=150&q=80", name: "Casual Tee", price: "$22.00" },
-                  { img: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=150&q=80", name: "Denim Jeans", price: "$59.00" },
-                ].map((product, idx) => (
-                  <div key={idx} className="bg-slate-50 rounded-lg p-1.5 border border-slate-100 flex flex-col space-y-1">
-                    <div className="h-12 bg-slate-200 rounded-md overflow-hidden">
-                      <img src={product.img} alt={product.name} className="w-full h-full object-cover" />
-                    </div>
-                    <span className="text-[9px] font-semibold text-slate-800 truncate">{product.name}</span>
-                    <span className="text-[8px] font-bold text-orange-600">{product.price}</span>
-                  </div>
-                ))}
+              <span className="rounded bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 text-[8.5px] font-semibold text-emerald-700 shrink-0">
+                Selected
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 gap-1 border-b border-slate-100 pb-1 text-[9.5px] font-semibold">
+              {["Content", "Style", "Layout", "Advanced"].map((tab) => (
+                <button
+                  key={tab}
+                  type="button"
+                  onClick={() => setActiveTab(tab)}
+                  className={`rounded py-0.5 text-center transition cursor-pointer ${
+                    activeTab === tab
+                      ? "bg-orange-50 text-orange-600"
+                      : "text-slate-400 hover:text-slate-700"
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+
+            <div className="space-y-1.5">
+              <div className="text-[10px] font-bold text-slate-800">Element Information</div>
+              <div className="rounded-md border border-slate-200 bg-slate-50/70 px-2 py-1 text-[9.5px] text-slate-500 truncate">
+                {selectedSection}
+              </div>
+              <div className="rounded-md border border-slate-200 bg-slate-50 px-2 py-1 text-[9.5px] font-medium text-slate-700">
+                section
               </div>
             </div>
+          </div>
+
+          <div className="pt-2 mt-2 border-t border-slate-100 flex items-center justify-between text-[8.5px] text-slate-400">
+            <span className="font-semibold text-slate-600">↺ Reset styles</span>
+            <span>Auto-save enabled</span>
           </div>
         </div>
       </div>
@@ -301,11 +410,16 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-800">
+      <SEO
+        title="Website Builder for Your Business"
+        description="Build, customize, and launch your business website with TANDAVV. Choose professional templates and create your online presence with ease."
+        path="/"
+      />
       <Navbar activeLink="home" />
 
       {/* HEADER & HERO */}
-      <section id="home" className="bg-gradient-to-b from-orange-50/50 to-white pb-20 pt-6">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 pb-8 pt-14 sm:px-8 lg:grid-cols-12 lg:gap-10 lg:pt-20">
+      <section id="home" className="bg-gradient-to-b from-orange-50/50 to-white pb-20 pt-0">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 pb-8 pt-6 sm:px-8 lg:grid-cols-12 lg:gap-10 lg:pt-8">
           <div className="space-y-6 lg:col-span-6">
             <h1 className="max-w-2xl text-4xl font-extrabold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
               Your Business.
@@ -314,7 +428,7 @@ export default function LandingPage() {
               <span className="block text-orange-600">Your Way.</span>
             </h1>
             <p className="max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
-              Build, customize, and manage a professional business website with Tandav. Choose a design, personalize your storefront, and launch without writing code[cite: 4].
+              Build, customize, and manage a professional business website with Tandav. Choose a design, personalize your storefront, and launch without writing code.
             </p>
             <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center">
               <Link
@@ -413,7 +527,7 @@ export default function LandingPage() {
               Everything you need to launch online
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
-              From your first storefront to managing products and publishing your website, Tandav keeps the process simple[cite: 4].
+              From your first storefront to managing products and publishing your website, Tandav keeps the process simple.
             </p>
           </div>
 
@@ -461,13 +575,12 @@ export default function LandingPage() {
             {faqs.map((faq, index) => {
               const isOpen = openFaq === index;
               return (
-                <div 
-                  key={index} 
-                  className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
-                    isOpen 
-                      ? "border-orange-300 bg-white shadow-md ring-2 ring-orange-50" 
-                      : "border-slate-200 bg-slate-50/70 hover:border-slate-300 hover:bg-slate-50"
-                  }`}
+                <div
+                  key={index}
+                  className={`overflow-hidden rounded-2xl border transition-all duration-300 ${isOpen
+                    ? "border-orange-300 bg-white shadow-md ring-2 ring-orange-50"
+                    : "border-slate-200 bg-slate-50/70 hover:border-slate-300 hover:bg-slate-50"
+                    }`}
                 >
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : index)}
@@ -476,16 +589,14 @@ export default function LandingPage() {
                     className="flex w-full items-center justify-between px-5 py-5 text-left text-sm font-bold text-slate-900 transition focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-orange-200 sm:px-6 cursor-pointer"
                   >
                     <span className="flex items-center gap-3">
-                      <span className={`flex h-6 w-6 items-center justify-center rounded-full font-mono text-xs transition-colors ${
-                        isOpen ? "bg-orange-600 text-white" : "bg-slate-200 text-slate-600"
-                      }`}>
+                      <span className={`flex h-6 w-6 items-center justify-center rounded-full font-mono text-xs transition-colors ${isOpen ? "bg-orange-600 text-white" : "bg-slate-200 text-slate-600"
+                        }`}>
                         {index + 1}
                       </span>
                       {faq.q}
                     </span>
-                    <span className={`flex h-7 w-7 items-center justify-center rounded-full transition-transform duration-300 ${
-                      isOpen ? "bg-orange-100 text-orange-600 rotate-180" : "bg-slate-200 text-slate-500"
-                    }`}>
+                    <span className={`flex h-7 w-7 items-center justify-center rounded-full transition-transform duration-300 ${isOpen ? "bg-orange-100 text-orange-600 rotate-180" : "bg-slate-200 text-slate-500"
+                      }`}>
                       ↓
                     </span>
                   </button>

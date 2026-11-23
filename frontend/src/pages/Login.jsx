@@ -154,12 +154,12 @@ function Login() {
                 >
                     <img
                         src="/logo.png"
-                        alt="Tandav Logo"
+                        alt="tandavv Logo"
                         className="h-9 w-auto object-contain brightness-0 invert"
                     />
 
                     <span className="font-bold text-lg tracking-tight text-white">
-                        Tandav
+                        tandavv
                     </span>
                 </Link>
 
@@ -183,7 +183,7 @@ function Login() {
                     </h1>
 
                     <p className="mt-5 max-w-sm text-sm leading-relaxed text-slate-300">
-                        Login to your Tandav workspace to create,
+                        Login to your tandavv workspace to create,
                         customize and manage your professional website
                         without writing a single line of code.
                     </p>
@@ -224,7 +224,7 @@ function Login() {
                 {/* Footer */}
 
                 <div className="relative text-xs text-slate-500">
-                    © {new Date().getFullYear()} Tandav Inc. All rights reserved.
+                    © {new Date().getFullYear()} tandavv Inc. All rights reserved.
                 </div>
 
             </div>
@@ -243,12 +243,12 @@ function Login() {
                     >
                         <img
                             src="/logo.png"
-                            alt="Tandav Logo"
+                            alt="tandavv Logo"
                             className="h-8 w-auto object-contain"
                         />
 
                         <span className="font-bold text-lg tracking-tight text-orange-600">
-                            Tandav
+                            tandavv
                         </span>
                     </Link>
 

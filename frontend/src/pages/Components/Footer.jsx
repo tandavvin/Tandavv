@@ -9,16 +9,16 @@ export default function Footer() {
           <Link to="/" className="flex items-center gap-2.5 no-underline">
             <img
               src="/logo.png"
-              alt="Tandav Logo"
+              alt="tandavv Logo"
               className="h-10 w-auto object-contain"
             />
             <span className="text-xl font-bold tracking-tight text-[#E6B13D]">
-              Tandav
+              tandavv
             </span>
           </Link>
 
           <p className="max-w-md text-sm leading-6 text-slate-500">
-            Tandav is the ultimate multi-tenant SaaS platform empowering
+            tandavv is the ultimate multi-tenant SaaS platform empowering
             entrepreneurs and small businesses to launch professional online
             stores effortlessly.
           </p>
@@ -67,7 +67,7 @@ export default function Footer() {
 
         <div className="space-y-4 md:col-span-3">
           <h5 className="text-sm font-bold uppercase tracking-wider text-slate-900">
-            Get started with Tandav
+            Get started with tandavv
           </h5>
           <p className="text-sm leading-6 text-slate-500">
             Explore website designs and find a starting point for your business.
@@ -82,7 +82,7 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 pt-8 text-sm text-slate-500 sm:flex-row">
-        <p>© {new Date().getFullYear()} Tandav. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} tandavv. All rights reserved.</p>
         <div className="flex items-center gap-6 text-sm text-slate-600">
           <Link to="/privacy" className="transition hover:text-orange-600">
             Privacy Policy

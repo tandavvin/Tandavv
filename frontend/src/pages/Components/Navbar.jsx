@@ -74,7 +74,7 @@ export default function Navbar({ activeLink = "" }) {
                     />
 
                     <span className="font-bold text-lg tracking-tight text-[#E6B13D]">
-                        Tandav
+                        Tandavv
                     </span>
                 </Link>
 

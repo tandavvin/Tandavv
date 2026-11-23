@@ -22,6 +22,7 @@ import {
 import { getToken } from "../utils/api";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import SEO from "../components/SEO";
 
 const TEMPLATES = [
   {
@@ -34,7 +35,7 @@ const TEMPLATES = [
     pricing: "Free",
     price: "Free",
     description: "Perfect for eCommerce businesses with product catalogs.",
-    title: "Grow Your Business\nWith Tandav",
+    title: "Grow Your Business\nWith TANDAVV",
     banner: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80",
     popular: true,
     products: [
@@ -242,7 +243,7 @@ export function TemplatePreviewCard({
             </div>
 
             <div className="mx-4 flex-1 rounded-md bg-gray-100 px-3 py-1 text-center text-[8px] text-gray-400">
-              {template.storeName.toLowerCase()}.tandav.com
+              {template.storeName.toLowerCase()}.tandavv.com
             </div>
           </div>
 
@@ -303,11 +304,10 @@ export function TemplatePreviewCard({
           )}
 
           <span
-            className={`w-fit rounded-md px-2 py-1 text-[9px] font-bold shadow-sm ${
-              template.pricing === "Free"
-                ? "bg-emerald-500 text-white"
-                : "bg-amber-400 text-gray-950"
-            }`}
+            className={`w-fit rounded-md px-2 py-1 text-[9px] font-bold shadow-sm ${template.pricing === "Free"
+              ? "bg-emerald-500 text-white"
+              : "bg-amber-400 text-gray-950"
+              }`}
           >
             {template.pricing}
           </span>
@@ -321,11 +321,10 @@ export function TemplatePreviewCard({
           }
           aria-pressed={isFavorite}
           onClick={() => onToggleFavorite(template.id)}
-          className={`absolute right-6 top-6 flex h-9 w-9 items-center justify-center rounded-full shadow-md transition ${
-            isFavorite
-              ? "bg-orange-600 text-white"
-              : "bg-white text-gray-500 hover:text-orange-600"
-          }`}
+          className={`absolute right-6 top-6 flex h-9 w-9 items-center justify-center rounded-full shadow-md transition ${isFavorite
+            ? "bg-orange-600 text-white"
+            : "bg-white text-gray-500 hover:text-orange-600"
+            }`}
         >
           <Heart size={17} fill={isFavorite ? "currentColor" : "none"} />
         </button>
@@ -358,11 +357,10 @@ export function TemplatePreviewCard({
             </span>
 
             <span
-              className={`rounded-md px-2.5 py-1 text-[10px] font-semibold ${
-                template.type === "Dynamic"
-                  ? "bg-blue-50 text-blue-700"
-                  : "bg-green-50 text-green-700"
-              }`}
+              className={`rounded-md px-2.5 py-1 text-[10px] font-semibold ${template.type === "Dynamic"
+                ? "bg-blue-50 text-blue-700"
+                : "bg-green-50 text-green-700"
+                }`}
             >
               {template.type}
             </span>
@@ -573,6 +571,11 @@ export default function Templates() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-800">
+      <SEO
+        title="Website Templates for Every Business"
+        description="Explore professional website templates for fashion, grocery, electronics and more. Customize and launch with TANDAVV."
+        path="/templates"
+      />
       <Navbar activeLink="templates" />
 
       {/* MARKETPLACE */}
@@ -585,9 +588,9 @@ export default function Templates() {
               Explore Designs
             </p>
 
-            <h2 className="mt-2 text-2xl font-extrabold text-gray-950 sm:text-3xl">
-              Website Templates
-            </h2>
+            <h1 className="mt-2 text-2xl font-extrabold text-gray-950 sm:text-3xl">
+              Website Templates for Every Business
+            </h1>
 
             <p className="mt-2 text-sm text-gray-500">
               Find a design that matches your business.
@@ -637,11 +640,10 @@ export default function Templates() {
               type="button"
               onClick={() => setShowFavoritesOnly((value) => !value)}
               aria-pressed={showFavoritesOnly}
-              className={`flex h-12 items-center justify-center gap-2 rounded-xl border px-4 text-sm font-semibold transition ${
-                showFavoritesOnly
-                  ? "border-orange-200 bg-orange-50 text-orange-600"
-                  : "border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
-              }`}
+              className={`flex h-12 items-center justify-center gap-2 rounded-xl border px-4 text-sm font-semibold transition ${showFavoritesOnly
+                ? "border-orange-200 bg-orange-50 text-orange-600"
+                : "border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
+                }`}
             >
               <Heart
                 size={16}
@@ -687,9 +689,8 @@ export default function Templates() {
 
             <ChevronDown
               size={18}
-              className={`text-gray-500 transition-transform ${
-                showFilters ? "rotate-180" : ""
-              }`}
+              className={`text-gray-500 transition-transform ${showFilters ? "rotate-180" : ""
+                }`}
             />
           </button>
 
@@ -709,11 +710,10 @@ export default function Templates() {
                       type="button"
                       aria-pressed={selectedCategory === category}
                       onClick={() => setSelectedCategory(category)}
-                      className={`rounded-lg px-4 py-2 text-xs font-semibold transition ${
-                        selectedCategory === category
-                          ? "bg-orange-600 text-white"
-                          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                      }`}
+                      className={`rounded-lg px-4 py-2 text-xs font-semibold transition ${selectedCategory === category
+                        ? "bg-orange-600 text-white"
+                        : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        }`}
                     >
                       {category}
                     </button>
@@ -738,11 +738,10 @@ export default function Templates() {
                         type="button"
                         aria-pressed={selectedContentType === type}
                         onClick={() => setSelectedContentType(type)}
-                        className={`rounded-lg px-4 py-2 text-xs font-semibold transition ${
-                          selectedContentType === type
-                            ? "bg-orange-600 text-white"
-                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                        }`}
+                        className={`rounded-lg px-4 py-2 text-xs font-semibold transition ${selectedContentType === type
+                          ? "bg-orange-600 text-white"
+                          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                          }`}
                       >
                         {type}
                       </button>
@@ -762,11 +761,10 @@ export default function Templates() {
                         type="button"
                         aria-pressed={selectedArchitecture === architecture}
                         onClick={() => setSelectedArchitecture(architecture)}
-                        className={`rounded-lg px-4 py-2 text-xs font-semibold transition ${
-                          selectedArchitecture === architecture
-                            ? "bg-orange-600 text-white"
-                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                        }`}
+                        className={`rounded-lg px-4 py-2 text-xs font-semibold transition ${selectedArchitecture === architecture
+                          ? "bg-orange-600 text-white"
+                          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                          }`}
                       >
                         {architecture}
                       </button>
@@ -838,7 +836,7 @@ export default function Templates() {
               </h3>
 
               <p className="mt-3 max-w-xl text-sm leading-7 text-gray-400">
-                Explore Tandav subscription plans and discover additional
+                Explore Tandavv subscription plans and discover additional
                 features for your growing business.
               </p>
             </div>
@@ -911,11 +909,10 @@ export default function Templates() {
                       aria-label="Desktop preview"
                       aria-pressed={previewDevice === "desktop"}
                       onClick={() => setPreviewDevice("desktop")}
-                      className={`rounded-md p-2 ${
-                        previewDevice === "desktop"
-                          ? "bg-white text-orange-600 shadow-sm"
-                          : "text-gray-500"
-                      }`}
+                      className={`rounded-md p-2 ${previewDevice === "desktop"
+                        ? "bg-white text-orange-600 shadow-sm"
+                        : "text-gray-500"
+                        }`}
                     >
                       <Monitor size={17} />
                     </button>
@@ -925,11 +922,10 @@ export default function Templates() {
                       aria-label="Mobile preview"
                       aria-pressed={previewDevice === "mobile"}
                       onClick={() => setPreviewDevice("mobile")}
-                      className={`rounded-md p-2 ${
-                        previewDevice === "mobile"
-                          ? "bg-white text-orange-600 shadow-sm"
-                          : "text-gray-500"
-                      }`}
+                      className={`rounded-md p-2 ${previewDevice === "mobile"
+                        ? "bg-white text-orange-600 shadow-sm"
+                        : "text-gray-500"
+                        }`}
                     >
                       <Smartphone size={17} />
                     </button>
@@ -939,11 +935,10 @@ export default function Templates() {
                 {/* Device Frame */}
                 <div className="flex min-h-[330px] items-center justify-center overflow-hidden rounded-2xl bg-gray-100 p-4">
                   <div
-                    className={`overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transition-all duration-300 ${
-                      previewDevice === "mobile"
-                        ? "w-[190px]"
-                        : "w-full"
-                    }`}
+                    className={`overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transition-all duration-300 ${previewDevice === "mobile"
+                      ? "w-[190px]"
+                      : "w-full"
+                      }`}
                   >
                     <div className="relative h-56 overflow-hidden sm:h-64">
                       <img
@@ -1030,11 +1025,10 @@ export default function Templates() {
                     </p>
 
                     <span
-                      className={`mt-2 inline-block rounded-md px-2 py-1 text-[10px] font-bold ${
-                        previewModalTemplate.pricing === "Free"
-                          ? "bg-green-50 text-green-700"
-                          : "bg-amber-50 text-amber-700"
-                      }`}
+                      className={`mt-2 inline-block rounded-md px-2 py-1 text-[10px] font-bold ${previewModalTemplate.pricing === "Free"
+                        ? "bg-green-50 text-green-700"
+                        : "bg-amber-50 text-amber-700"
+                        }`}
                     >
                       {previewModalTemplate.pricing}
                     </span>

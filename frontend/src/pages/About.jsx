@@ -19,6 +19,7 @@ import {
 
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import SEO from "../components/SEO";
 
 const features = [
   {
@@ -39,7 +40,7 @@ const features = [
     icon: Globe,
     title: "Custom Domains",
     description:
-      "Launch your storefront using a Tandav subdomain or connect your own custom business domain.",
+      "Launch your storefront using a tandavv subdomain or connect your own custom business domain.",
     color: "purple",
   },
   {
@@ -85,7 +86,7 @@ const steps = [
     icon: Rocket,
     title: "Launch Your Website",
     description:
-      "Publish your storefront and start building your online presence with Tandav.",
+      "Publish your storefront and start building your online presence with tandavv.",
   },
 ];
 
@@ -108,6 +109,11 @@ function SectionLabel({ children }) {
 export default function About() {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-800">
+      <SEO
+        title="About TANDAVV – Our Mission and Vision"
+        description="Learn about TANDAVV, a website builder designed to help businesses create, customize, and manage professional online storefronts using ready-made templates and easy-to-use tools."
+        path="/about"
+      />
       <Navbar activeLink="about" />
 
       {/* HERO SECTION */}
@@ -125,7 +131,7 @@ export default function About() {
 
           <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
             We believe every business deserves a professional online presence.
-            Tandav makes it easier to create, customize and manage your own
+            tandavv makes it easier to create, customize and manage your own
             digital storefront without complicated development work.
           </p>
 
@@ -181,7 +187,7 @@ export default function About() {
             </p>
 
             <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-              Tandav brings these essential website-building capabilities
+              tandavv brings these essential website-building capabilities
               together in one platform. Instead of dealing with complex
               development processes, business owners can choose a template,
               customize their storefront and manage their online presence
@@ -363,7 +369,7 @@ export default function About() {
       <section className="px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <SectionLabel>Why Tandav</SectionLabel>
+            <SectionLabel>Why tandavv</SectionLabel>
 
             <h2 className="mt-6 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
               Everything You Need to
@@ -371,7 +377,7 @@ export default function About() {
             </h2>
 
             <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
-              From selecting a design to managing your products, Tandav
+              From selecting a design to managing your products, tandavv
               provides the essential tools to help you create your online
               storefront.
             </p>
@@ -417,7 +423,7 @@ export default function About() {
             </h2>
 
             <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
-              Creating your online storefront with Tandav is designed to be
+              Creating your online storefront with tandavv is designed to be
               simple and straightforward.
             </p>
           </div>
@@ -474,7 +480,7 @@ export default function About() {
 
             <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-slate-400 sm:text-base">
               Start exploring website templates and discover how simple it
-              can be to build your own digital storefront with Tandav.
+              can be to build your own digital storefront with tandavv.
             </p>
 
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">

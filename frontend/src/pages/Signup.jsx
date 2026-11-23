@@ -224,12 +224,12 @@ function Signup() {
                 >
                     <img
                         src="/logo.png"
-                        alt="Tandav Logo"
+                        alt="tandavv Logo"
                         className="h-9 w-auto object-contain brightness-0 invert"
                     />
 
                     <span className="font-bold text-lg tracking-tight text-white">
-                        Tandav
+                        tandavv
                     </span>
                 </Link>
 
@@ -251,7 +251,7 @@ function Signup() {
                     </h1>
 
                     <p className="mt-5 max-w-sm text-sm leading-relaxed text-slate-300">
-                        Create your Tandav account and start building
+                        Create your tandavv account and start building
                         your professional business website. Choose
                         beautiful templates, customize everything
                         and grow your business online.
@@ -274,7 +274,7 @@ function Signup() {
                 </div>
 
                 <div className="relative text-xs text-slate-500">
-                    © {new Date().getFullYear()} Tandav Inc. All rights reserved.
+                    © {new Date().getFullYear()} tandavv Inc. All rights reserved.
                 </div>
             </div>
 
@@ -292,12 +292,12 @@ function Signup() {
                     >
                         <img
                             src="/logo.png"
-                            alt="Tandav Logo"
+                            alt="tandavv Logo"
                             className="h-8 w-auto object-contain"
                         />
 
                         <span className="font-bold text-lg tracking-tight text-orange-600">
-                            Tandav
+                            tandavv
                         </span>
                     </Link>
 
@@ -312,7 +312,7 @@ function Signup() {
                     <p className="mt-2 text-sm text-slate-500">
                         {otpSent
                             ? `We sent a 6-digit verification code to ${form.email}.`
-                            : "Join Tandav and start building your website today."}
+                            : "Join tandavv and start building your website today."}
                     </p>
 
                     {/* Error Message */}

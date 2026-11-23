@@ -16,6 +16,7 @@ import {
 
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import SEO from "../components/SEO";
 
 const plans = [
   {
@@ -28,7 +29,7 @@ const plans = [
     features: [
       "1 storefront",
       "Free website templates",
-      "Tandav subdomain",
+      "tandavv subdomain",
       "Basic drag-and-drop editor",
       "Up to 10 products",
       "Community support",
@@ -86,17 +87,17 @@ const faqs = [
   {
     question: "Can I use my own custom domain?",
     answer:
-      "Yes. Custom domain support is included in the Pro Storefront and Business Growth plans. The Starter plan uses a Tandav subdomain.",
+      "Yes. Custom domain support is included in the Pro Storefront and Business Growth plans. The Starter plan uses a tandavv subdomain.",
   },
   {
-    question: "Does Tandav charge transaction fees?",
+    question: "Does tandavv charge transaction fees?",
     answer:
       "The Pro Storefront and Business Growth plans include zero platform transaction fees. Payment gateway charges, if applicable, are separate and depend on your payment provider.",
   },
   {
     question: "Which payment methods are supported?",
     answer:
-      "Tandav uses Razorpay for payment processing. Available payment methods depend on the options enabled by Razorpay for your account.",
+      "tandavv uses Razorpay for payment processing. Available payment methods depend on the options enabled by Razorpay for your account.",
   },
   {
     question: "Can I upgrade from Starter to Pro later?",
@@ -111,11 +112,10 @@ function PricingCard({ plan, yearly }) {
 
   return (
     <div
-      className={`relative flex h-full flex-col rounded-2xl border p-6 transition-all duration-300 sm:p-7 ${
-        plan.popular
+      className={`relative flex h-full flex-col rounded-2xl border p-6 transition-all duration-300 sm:p-7 ${plan.popular
           ? "border-orange-500 bg-orange-600 text-white shadow-xl shadow-orange-600/15 md:-translate-y-2"
           : "border-gray-200 bg-white text-gray-900 shadow-sm hover:-translate-y-1 hover:shadow-lg"
-      }`}
+        }`}
     >
       {plan.popular && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -126,11 +126,10 @@ function PricingCard({ plan, yearly }) {
       )}
 
       <div
-        className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl ${
-          plan.popular
+        className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl ${plan.popular
             ? "bg-white/15 text-white"
             : "bg-orange-50 text-orange-600"
-        }`}
+          }`}
       >
         <Icon size={23} />
       </div>
@@ -138,9 +137,8 @@ function PricingCard({ plan, yearly }) {
       <h3 className="text-xl font-bold">{plan.name}</h3>
 
       <p
-        className={`mt-2 min-h-[48px] text-sm leading-6 ${
-          plan.popular ? "text-orange-100" : "text-gray-500"
-        }`}
+        className={`mt-2 min-h-[48px] text-sm leading-6 ${plan.popular ? "text-orange-100" : "text-gray-500"
+          }`}
       >
         {plan.description}
       </p>
@@ -152,9 +150,8 @@ function PricingCard({ plan, yearly }) {
           </span>
 
           <span
-            className={`text-sm ${
-              plan.popular ? "text-orange-100" : "text-gray-500"
-            }`}
+            className={`text-sm ${plan.popular ? "text-orange-100" : "text-gray-500"
+              }`}
           >
             {price === 0 ? "/ forever" : "/ month"}
           </span>
@@ -162,9 +159,8 @@ function PricingCard({ plan, yearly }) {
 
         {plan.monthlyPrice > 0 && (
           <p
-            className={`mt-2 text-xs ${
-              plan.popular ? "text-orange-100" : "text-gray-500"
-            }`}
+            className={`mt-2 text-xs ${plan.popular ? "text-orange-100" : "text-gray-500"
+              }`}
           >
             {yearly
               ? `₹${(price * 12).toLocaleString("en-IN")} billed annually`
@@ -174,9 +170,8 @@ function PricingCard({ plan, yearly }) {
 
         {plan.monthlyPrice === 0 && (
           <p
-            className={`mt-2 text-xs ${
-              plan.popular ? "text-orange-100" : "text-gray-500"
-            }`}
+            className={`mt-2 text-xs ${plan.popular ? "text-orange-100" : "text-gray-500"
+              }`}
           >
             No credit card required
           </p>
@@ -184,15 +179,13 @@ function PricingCard({ plan, yearly }) {
       </div>
 
       <div
-        className={`my-7 h-px ${
-          plan.popular ? "bg-white/20" : "bg-gray-100"
-        }`}
+        className={`my-7 h-px ${plan.popular ? "bg-white/20" : "bg-gray-100"
+          }`}
       />
 
       <p
-        className={`mb-5 text-sm font-semibold ${
-          plan.popular ? "text-white" : "text-gray-900"
-        }`}
+        className={`mb-5 text-sm font-semibold ${plan.popular ? "text-white" : "text-gray-900"
+          }`}
       >
         What's included
       </p>
@@ -201,19 +194,17 @@ function PricingCard({ plan, yearly }) {
         {plan.features.map((feature, index) => (
           <li key={index} className="flex items-start gap-3">
             <span
-              className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
-                plan.popular
+              className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${plan.popular
                   ? "bg-white/20 text-white"
                   : "bg-orange-50 text-orange-600"
-              }`}
+                }`}
             >
               <Check size={13} strokeWidth={3} />
             </span>
 
             <span
-              className={`text-sm leading-5 ${
-                plan.popular ? "text-orange-50" : "text-gray-600"
-              }`}
+              className={`text-sm leading-5 ${plan.popular ? "text-orange-50" : "text-gray-600"
+                }`}
             >
               {feature}
             </span>
@@ -247,18 +238,16 @@ function FAQItem({ question, answer, isOpen, onClick }) {
 
         <ChevronDown
           size={20}
-          className={`shrink-0 text-gray-500 transition-transform duration-300 ${
-            isOpen ? "rotate-180" : ""
-          }`}
+          className={`shrink-0 text-gray-500 transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+            }`}
         />
       </button>
 
       <div
-        className={`grid transition-all duration-300 ${
-          isOpen
+        className={`grid transition-all duration-300 ${isOpen
             ? "grid-rows-[1fr] pb-5 opacity-100"
             : "grid-rows-[0fr] opacity-0"
-        }`}
+          }`}
       >
         <div className="overflow-hidden">
           <p className="max-w-3xl text-sm leading-7 text-gray-500">
@@ -276,6 +265,11 @@ export default function Pricing() {
 
   return (
     <div className="min-h-screen bg-[#fafaf9] text-gray-900">
+      <SEO
+        title="Pricing Plans for Your Business"
+        description="Explore TANDAVV pricing plans. Start building your online store for free or choose a paid plan with premium templates, custom domains, advanced SEO, and business growth features."
+        path="/pricing"
+      />
       <Navbar activeLink="pricing" />
 
       {/* Hero */}
@@ -292,7 +286,7 @@ export default function Pricing() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-gray-500 sm:text-lg">
-            Build your online presence with Tandav. Choose the tools you need
+            Build your online presence with tandavv. Choose the tools you need
             today and upgrade as your business grows.
           </p>
 
@@ -303,11 +297,10 @@ export default function Pricing() {
                 type="button"
                 onClick={() => setYearly(false)}
                 aria-pressed={!yearly}
-                className={`rounded-lg px-5 py-2.5 text-sm font-semibold transition-all ${
-                  !yearly
+                className={`rounded-lg px-5 py-2.5 text-sm font-semibold transition-all ${!yearly
                     ? "bg-gray-900 text-white shadow-sm"
                     : "text-gray-500 hover:text-gray-900"
-                }`}
+                  }`}
               >
                 Monthly
               </button>
@@ -316,11 +309,10 @@ export default function Pricing() {
                 type="button"
                 onClick={() => setYearly(true)}
                 aria-pressed={yearly}
-                className={`rounded-lg px-5 py-2.5 text-sm font-semibold transition-all ${
-                  yearly
+                className={`rounded-lg px-5 py-2.5 text-sm font-semibold transition-all ${yearly
                     ? "bg-orange-600 text-white shadow-sm"
                     : "text-gray-500 hover:text-gray-900"
-                }`}
+                  }`}
               >
                 Yearly
               </button>
@@ -379,7 +371,7 @@ export default function Pricing() {
                 icon: Zap,
                 title: "Easy customization",
                 description:
-                  "Customize your storefront using the Tandav editor.",
+                  "Customize your storefront using the tandavv editor.",
               },
               {
                 icon: CreditCard,
@@ -429,7 +421,7 @@ export default function Pricing() {
             </h2>
 
             <p className="mt-3 text-sm leading-6 text-gray-500">
-              Have questions about Tandav pricing? Find your answers below.
+              Have questions about tandavv pricing? Find your answers below.
             </p>
           </div>
 
