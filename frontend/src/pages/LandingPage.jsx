@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import SEO from "../components/SEO";
+import OrganizationSchema from "../components/OrganizationSchema";
 
 const features = [
   {
@@ -410,6 +411,7 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-800">
+      <OrganizationSchema />
       <SEO
         title="Website Builder for Your Business"
         description="Build, customize, and launch your business website with TANDAVV. Choose professional templates and create your online presence with ease."
